@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Emoji com Flor</title>
+<style>
+  body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  svg {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Animação da mão oferecendo a flor */
+  .hand {
+    transform-origin: top left;
+    animation: offer 2s ease-out forwards;
+  }
+
+  @keyframes offer {
+    0%   { transform: translateX(-30px) translateY(10px) rotate(-20deg); }
+    50%  { transform: translateX(0px) translateY(0px) rotate(0deg); }
+    70%  { transform: translateX(3px) translateY(-2px) rotate(2deg); }
+    100% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+  }
+
+  /* Entrada suave do personagem */
+  .face {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+</head>
+<body>
+
+<svg viewBox="0 0 200 200">
+  <!-- Rosto -->
+  <circle class="face" cx="100" cy="100" r="60" fill="#FFD93B" stroke="#E1B12C" stroke-width="3"/>
+  
+  <!-- Olhos -->
+  <ellipse cx="85" cy="95" rx="8" ry="12" fill="#fff"/>
+  <ellipse cx="115" cy="95" rx="8" ry="12" fill="#fff"/>
+  <circle cx="85" cy="95" r="5" fill="#3b3b3b"/>
+  <circle cx="115" cy="95" r="5" fill="#3b3b3b"/>
+  
+  <!-- Sobrancelhas -->
+  <path d="M75 80 Q85 75 95 78" stroke="#000" stroke-width="2" fill="none"/>
+  <path d="M105 78 Q115 75 125 80" stroke="#000" stroke-width="2" fill="none"/>
+  
+  <!-- Boca -->
+  <path d="M85 120 Q100 135 115 120" stroke="#A65F2D" stroke-width="3" fill="none"/>
+  
+  <!-- Mão + Flor -->
+  <g class="hand">
+    <!-- Mão -->
+    <ellipse cx="140" cy="140" rx="10" ry="15" fill="#FFD93B" stroke="#E1B12C" stroke-width="2"/>
+    
+    <!-- Haste -->
+    <rect x="145" y="120" width="4" height="25" fill="#228B22"/>
+    
+    <!-- Pétalas -->
+    <circle cx="147" cy="115" r="6" fill="red"/>
+    <circle cx="140" cy="112" r="6" fill="red"/>
+    <circle cx="154" cy="112" r="6" fill="red"/>
+    <circle cx="142" cy="107" r="6" fill="red"/>
+    <circle cx="152" cy="107" r="6" fill="red"/>
+    
+    <!-- Centro da flor -->
+    <circle cx="147" cy="112" r="3" fill="#ffb347"/>
+  </g>
+</svg>
+
+</body>
+</html>
